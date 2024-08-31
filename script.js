@@ -1,5 +1,5 @@
 // Set the target date to September 10th
-const targetDate = new Date('August 31, 2024 00:00:00').getTime();
+const targetDate = new Date('September 10, 2024 00:00:00').getTime();
 const countdownText = document.getElementById('countdownText');
 const wishesText = document.getElementById('wishesText');
 const dailyImage = document.getElementById('dailyImage');
