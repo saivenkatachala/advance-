@@ -8,7 +8,7 @@ const surpriseButton = document.getElementById('surpriseButton');
 // Image sources for each day (replace with your actual image paths)
 const images = [
     'image1.jpg', // September 1st
-    'image2.jpg',  // September 2nd
+    'iamge2.jpg',  // September 2nd
     'image3.jpg',  // September 3rd
     'image4.jpg',  // September 4th
     'image5.jpg',  // September 5th
