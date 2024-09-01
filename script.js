@@ -12,11 +12,12 @@ const images = [
     'image3.jpg',  // September 3rd
     'image4.jpg',  // September 4th
     'image5.jpg',  // September 5th
-    'image6.jpg',  // September 6th
+    'image61.jpg',  // September 6th
     'image7.jpg',  // September 7th
-    'image8.jpg',  // September 8th
-    'image9.jpg',  // September 9th
-    'image10.jpg' // September 10th
+    'image81.jpg',  // September 8th
+    'image11.jpg',  // September 9th
+    'image10.jpg',
+    'image91.jpg'// September 10th
 ];
 
 // Function to calculate the remaining days and update the text and image
