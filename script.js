@@ -16,30 +16,38 @@ const images = [
     'image7.jpg',  // September 7th
     'image81.jpg',  // September 8th
     'image11.jpg',  // September 9th
-    'image10.jpg',
-    'image91.jpg'// September 10th
+    'image10.jpg', // September 10th
 ];
 
-// Function to calculate the remaining days and update the text and image
+// Function to calculate the remaining time and update the text and image
 function updateCountdown() {
     const now = new Date().getTime();
     const timeLeft = targetDate - now;
-    const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
 
-    console.log("Days left:", daysLeft); // Debug log
+    if (timeLeft > 0) {
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    if (daysLeft > 0) {
-        countdownText.textContent = `${daysLeft} days more`;
+        // Display the countdown timer
+        countdownText.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        // Display the advance birthday wishes
         wishesText.textContent = "Advance Happy Birthday Deeku!";
-        dailyImage.src = images[10 - daysLeft]; // Set the image for the corresponding day
+
+        // Update the daily image
+        dailyImage.src = images[10 - days]; 
     } else {
+        // Show birthday message and the surprise button
         countdownText.textContent = "It's your birthday, Deeku!";
         wishesText.textContent = "Happy Birthday Deeku!";
-        dailyImage.src = images[9]; // Set the birthday image
+        dailyImage.src = images[9]; // Birthday image
         surpriseButton.style.display = "inline-block"; // Show the surprise button
     }
 }
 
-// Initial call and interval to update the countdown every 24 hours
+// Initial call and interval to update the countdown every second
 updateCountdown();
-setInterval(updateCountdown, 1000 * 60 * 60 * 24);
+setInterval(updateCountdown, 1000); // Update every second
